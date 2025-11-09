@@ -1,0 +1,135 @@
+/* math.css */
+
+/* --- IMPORT A MATH-SPECIFIC FONT --- */
+/* Source Code Pro is used for formulas and code-like elements */
+
+/* --- MATH HERO SECTION --- */
+
+.math-hero {
+    /* Use a background image specific to mathematics, charts, or diagrams */
+    background: linear-gradient(rgba(255, 254, 254, 0.7), rgba(135, 244, 248, 0.7)), url('Isaac Newton_ El genio solitario que descifró el universo.jpg') no-repeat center center;
+    /* 🚨 ACTION: Replace 'math_diagram.jpg' with a high-res image of mathematical formulas or a graph */
+    background-size: cover;
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    border-bottom: 5px solid var(--accent-orange); /* Sharp border for emphasis */
+}
+
+.math-hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.math-hero .anchor-nav a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.math-hero .anchor-nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- MATH SECTION STYLING --- */
+
+.math-section {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.math-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.math-box h3 {
+    color: var(--primary-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin-top: 0;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Quote card with analytical background */
+.quote-card {
+    background-color: #eaf3ff; /* Light, cool blue */
+    border-left: 5px solid var(--secondary-blue);
+    padding: 15px 20px;
+    margin: 25px 0;
+    font-style: italic;
+    color: #444;
+}
+
+/* --- FLUXION NOTATION / CODE BLOCK STYLING --- */
+
+.content-split {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.content-split .text-content {
+    flex: 2;
+    min-width: 300px;
+}
+
+.code-block {
+    flex: 1;
+    min-width: 250px;
+    background-color: #333; /* Dark background for code/formula */
+    color: #00ffaa; /* Neon green text for a "terminal" look */
+    padding: 20px;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 1.6;
+}
+
+.code-block h4 {
+    color: white;
+    border-bottom: 1px dashed var(--accent-orange);
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.formula {
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+.explanation {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #555;
+}
+
+/* General Link Style */
+.read-more-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--secondary-blue);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.read-more-link:hover {
+    border-bottom: 2px solid var(--accent-orange);
+}

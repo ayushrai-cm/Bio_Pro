@@ -1,0 +1,121 @@
+/* optics.css */
+
+/* --- OPTICS HERO SECTION --- */
+
+.optics-hero {
+    /* Use a background image specific to light, prisms, or a spectrum */
+    background: linear-gradient(rgb(170, 176, 176), rgba(144, 232, 250, 0.7)), url('“Newton’s Enlightenment — The Apple’s Secret Power”.jpg') no-repeat center center;
+    /* 🚨 ACTION: Replace 'spectrum_bg.jpg' with a high-res image of light spectrum, a prism, or a rainbow */
+    background-size: cover;
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.optics-hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.optics-hero .anchor-nav a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.optics-hero .anchor-nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- OPTICS SECTION STYLING --- */
+
+.optics-section {
+    padding: 30px;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Stronger shadow for depth */
+}
+
+.optics-section h3 {
+    color: var(--primary-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Underline effect for H3 */
+.optics-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px; /* Short, prominent underline */
+    height: 3px;
+    background-color: var(--accent-orange);
+}
+
+/* --- IMAGE AND TEXT LAYOUT --- */
+
+.content-with-image {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    align-items: center; /* Vertically centers content */
+    gap: 30px; /* Space between text and image */
+}
+
+.text-content {
+    flex: 2; /* Takes up more space than the image */
+    min-width: 300px; /* Ensures text block doesn't get too small */
+}
+
+.image-content {
+    flex: 1; /* Takes up less space than the text */
+    min-width: 200px; /* Ensures image block doesn't get too small */
+    text-align: center;
+}
+
+.optics-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Reverse layout for alternating sections */
+.content-with-image.reversed {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal rule separator - reused from physics.css logic but can be customized here */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+    margin: 50px 0;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .content-with-image,
+    .content-with-image.reversed {
+        flex-direction: column; /* Stacks text and image vertically on small screens */
+    }
+}

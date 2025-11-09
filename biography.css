@@ -1,0 +1,209 @@
+/* biography.css */
+
+/* --- BIOGRAPHY HERO SECTION --- */
+
+.bio-hero {
+    /* Use a classical portrait or historical image */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('download.jpg') no-repeat center center;
+    /* 🚨 ACTION: Replace 'newton_portrait.jpg' with a high-res portrait of Newton */
+    background-size: cover;
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    border-bottom: 5px solid #666; /* Subtle gray border */
+}
+
+.bio-hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- THE TIMELINE STRUCTURE --- */
+
+.timeline {
+    position: relative; /* All items are positioned relative to this container */
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+/* The vertical connecting line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--secondary-blue); /* The timeline color */
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Positioned exactly in the middle */
+    margin-left: -1.5px;
+}
+
+/* Individual timeline event container */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%; /* Takes up half the width of the container */
+}
+
+/* Content box for the event */
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    color: var(--accent-orange);
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+    font-size: 1.5em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Left side alignment */
+.left {
+    left: 0;
+    padding-right: 60px; /* Space for the dot/icon */
+}
+
+/* Right side alignment */
+.right {
+    left: 50%; /* Starts at the center line */
+    padding-left: 60px; /* Space for the dot/icon */
+}
+
+/* The circular marker on the timeline line */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12.5px; /* Half of width to center it on the line */
+    background-color: white;
+    border: 4px solid var(--primary-dark);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Adjust the marker for the right side events */
+.right::after {
+    left: -12.5px; /* Position to the left of the content */
+}
+
+/* Arrow pointer for the left items */
+.left .timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: -10px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Arrow pointer for the right items */
+.right .timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: -10px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* --- RESPONSIVENESS for Mobile --- */
+
+@media (max-width: 800px) {
+    /* Stack everything on small screens */
+    .timeline::after {
+        left: 20px; /* Move the vertical line to the left edge */
+    }
+    
+    .timeline-item {
+        width: 100%; /* Full width */
+        padding-left: 60px;
+        padding-right: 10px;
+    }
+    
+    .timeline-item.right, .timeline-item.left {
+        left: 0; /* All items start from the left */
+        padding-left: 60px;
+        padding-right: 10px;
+    }
+    
+    /* Reposition the marker and arrow to the left edge */
+    .timeline-item::after {
+        left: 14px;
+    }
+    
+    .timeline-item.left .timeline-content::before,
+    .timeline-item.right .timeline-content::before {
+        left: 50px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+}
+
+.event-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    /* Center image within content box */
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- INTERACTIVE BUTTONS AND DETAIL SECTION --- */
+
+.detail-toggle {
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.detail-toggle:hover {
+    background-color: #d86910; /* Darker orange on hover */
+}
+
+/* Style for the hidden text section */
+.detailed-info {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed #eee;
+    font-size: 0.95em;
+    line-height: 1.5;
+    background-color: #f7f7f7; /* Slightly different background for the detail box */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* CSS class to hide the detail box by default (will be toggled by JS) */
+.detailed-info.hidden {
+    display: none;
+}

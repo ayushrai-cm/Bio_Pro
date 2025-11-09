@@ -1,0 +1,74 @@
+/* physics.css */
+
+/* --- PHYSICS HERO SECTION --- */
+
+.physics-hero {
+    /* Use a background image specific to physics/gravity */
+    background: linear-gradient(rgba(208, 223, 242, 0.7), rgba(141, 183, 239, 0.7)), url('Isaac Newton_ El genio solitario que descifró el universo.jpg') no-repeat center center;
+    /* 🚨 ACTION: Replace 'apple.jpg' with a high-res image of an apple falling or a galaxy/planetary motion diagram */
+    background-size: cover;
+    height: 300px; /* Slightly shorter than the homepage hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.physics-hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.anchor-nav a {
+    color: var(--accent-orange); /* Uses the accent color from style.css */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.anchor-nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- LAW SECTION STYLING --- */
+
+.law-section {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--secondary-blue); /* A prominent border for distinction */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.law-section h3 {
+    color: var(--primary-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Blockquote for the direct Law quote */
+.law-quote {
+    background-color: #f0f8ff; /* Very light blue background */
+    border-left: 4px solid var(--accent-orange);
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Horizontal rule separator */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
